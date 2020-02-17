@@ -1,0 +1,48 @@
+// New at coding javascrpit and trying to code a simple stopwatch, managed to write the code up untill this point where when i click on the STOP button it returns the counter to 0 but starts again without clicking the START button
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Stopwatch</title>
+    </head>
+    <body>
+        
+        <button id="stop-button" type="button">Stop</button>
+        <p>
+            <span id="seconds">0</span> seconds have past
+        </p>
+        <button id = 'startbuttn'>
+        start again
+        
+        </button>
+        <script>
+           
+            var seconds = document.getElementById("seconds");
+            var countUp = function() { 
+            seconds.textContent= parseFloat(seconds.textContent) + 1
+        
+                
+            };
+          var timer= window.setInterval(countUp,1000);
+            
+            var stopCountUp = function() { 
+             
+                  
+                     window.clearInterval(timer);
+                  seconds.textContent= 0;
+                document.getElementById('seconds').innerHTML ='0';
+                
+                return 0;
+            };
+            stopCountUp();
+            
+            var stopButton = document.getElementById("stop-button");
+            stopButton.addEventListener("click", stopCountUp);
+         
+           var eww = document.getElementById('startbuttn').addEventListener('click', function bww(){window.setInterval(countUp,1000)});
+            
+            
+        </script>
+    </body>
